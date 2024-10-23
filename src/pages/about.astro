@@ -12,6 +12,13 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "ドキュメン�
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
+
+import '../styles/global.css';
+
 ---
 
 <html lang="en">
@@ -43,12 +50,24 @@ const goal = 3;
 </ul>
 <p>私のスキルは以下の通りです。</p>
 <ul>
-  {skills.map((skill) => <li>{skill}</li>)}
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
 </ul>
 {happy && <p>I am happy to be learning Astro! Astroを学べて幸せです！</p>}
 
 {finished && <p>I finished this tutorial! このチュートリアルを終えました！</p>}
 
 {goal === 3 ? <p>My goal is to finish in 3 days. 3日で終えるのが目標です。</p> : <p>My goal is not 3 days. 3日が目標ではありません。</p>}
+
+<style define:vars={{skillColor, fontWeight, textCase}}>
+    h1 {
+      color: purple;
+      font-size: 4rem;
+    }
+    .skill {
+      color: var(--skillColor);
+      font-weight: var(--fontWeight);
+      text-transform: var(--textCase);
+    }
+  </style>
       </body>
 </html>
