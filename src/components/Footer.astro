@@ -1,16 +1,14 @@
 ---
-import Social from './Social.astro';
+// src/components/Copyright.astro
+const currentYear = new Date().getFullYear();
 ---
-<style>
-  footer {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-</style>
 
-<footer>
-  <Social platform="twitter" username="astrodotbuild" />
-  <Social platform="github" username="withastro" />
-  <Social platform="youtube" username="astrodotbuild" />
+<footer class="bg-gray-800 text-white py-4">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-center items-center">
+            <p class="text-sm">
+                &copy; {currentYear} Yuya Akatsu.
+            </p>
+        </div>
+    </div>
 </footer>
