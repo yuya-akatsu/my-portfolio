@@ -1,25 +1,25 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Heading from '../Components/Heading.astro';
-import Card from '../Components/Card.astro';
 import Contact from '../Components/Contact.astro';
+import Card from '../Components/Card.astro';
 
 const pageTitle = "ホームページ";
 ---
-<BaseLayout pageTitle={pageTitle}>
-<section class="pb-40 " id="mainVisual">
+
+<BaseLayout pageTitle={pageTitle} >
+<section class="mb-40 " id="mainVisual">
 	<img src="public/mainVisualImage.jpg" alt="" class="w-1/4 m-auto rounded-full mb-6 ">
 	<h1 class="text-4xl lg:text-5xl text-center mb-2 font-extrabold">赤津優弥</h1>
 	<p class="text-center">Web Designer</p>
 
 </section>
-<section class="pb-40" id="works">
+<section class="mb-40 max-w-screen-lg mx-auto" id="works">
 	<Heading />
 	<Card />
 
-
 </section>
-<section class="pb-40" id="service">
+<section class="mb-40  max-w-screen-lg mx-auto" id="service">
 	<Heading />
 	<span class="サービス"></span>
 	<div class="group">
@@ -58,20 +58,22 @@ const pageTitle = "ホームページ";
 
 
 </section>
-<section class=" text-white bg-black" id="profile">
-	<Heading />
-	<div class="p-16 leading-loose">
-		<p class="pb-">4月11日生まれ / O型 /埼玉県出身/宮城県在住</p>
-		<p class="pb-">Webデザインの専門学校を卒業後、地方暮らしに憧れを抱き、どうせ住むならと｢山村･豪雪･過疎｣三重苦の地域に移住を決意。</p>
-		<p class="pb-">コンサルティングファームのWebデザイナーとして新卒入社し、築50年の空き家で在宅ワークを開始する。</p>
-		<p class="pb-">冬は最高気温が氷点下の毎日。何度も水道が凍り、寒さで眠れない夜を過ごすも2度の越冬に成功。</p>
-		<p class="pb-">降雪により1年の半分以上愛車のバイクに乗れない事情から、泣く泣くあたたかい地域を目指して新天地へ。</p>
-		<p class="pb-">フリーのWebデザイナーとして活動を始め今に至る。</p>
-		<p class="pb-">趣味は自炊と散歩。</p>
+<section class=" text-white bg-black mb-40 " id="profile">
+	<div class="max-w-screen-lg mx-auto py-16">
+		<Heading />
+		<div class=" leading-loose">
+			<p class="pb-">4月11日生まれ / O型 /埼玉県出身/宮城県在住</p>
+			<p class="pb-">Webデザインの専門学校を卒業後、地方暮らしに憧れを抱き、どうせ住むならと｢山村･豪雪･過疎｣三重苦の地域に移住を決意。</p>
+			<p class="pb-">コンサルティングファームのWebデザイナーとして新卒入社し、築50年の空き家で在宅ワークを開始する。</p>
+			<p class="pb-">冬は最高気温が氷点下の毎日。何度も水道が凍り、寒さで眠れない夜を過ごすも2度の越冬に成功。</p>
+			<p class="pb-">降雪により1年の半分以上愛車のバイクに乗れない事情から、泣く泣くあたたかい地域を目指して新天地へ。</p>
+			<p class="pb-">フリーのWebデザイナーとして活動を始め今に至る。</p>
+			<p class="pb-">趣味は自炊と散歩。</p>
+		</div>
 	</div>
 
 </section>
-<section class="" id="contact">
+<section class="mb-40 max-w-screen-lg mx-auto" id="contact">
 	<Heading />
 	<Contact />
 </section>
