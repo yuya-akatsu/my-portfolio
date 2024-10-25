@@ -9,15 +9,31 @@
 
       <!-- ナビゲーション -->
       <nav class="space-x-4 hidden md:block">
-        <a href="#home" class="capitalize">home</a>
-        <a href="#works" class="capitalize">works</a>
-        <a href="#service" class="capitalize">service</a>
-        <a href="#profile" class="capitalize">profile</a>
+        <a href="#works" class="capitalize  relative pb-1 line">works</a>
+        <a href="#service" class="capitalize relative pb-1 line">service</a>
+        <a href="#profile" class="capitalize relative pb-1 line">profile</a>
+        <a href="#contact" class="capitalize relative pb-1 line">contact</a>
       </nav>
 
-      <!-- Call to Action ボタン -->
-      <div>
-        <a href="#contact" class="px-4 py-2 bg-black text-white rounded">Contact</a>
-      </div>
     </div>
   </header>
+
+  <style>
+    /* Tailwindではサポートされていない擬似要素のスタイル */
+    .line::before {
+      content: '';
+      background: #000;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      transform: scale(0, 1);
+      transform-origin: right top;
+      transition: transform 0.3s;
+    }
+    .line:hover::before {
+      transform-origin: left top;
+      transform: scale(1, 1);
+    }
+  </style>
