@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Heading from '../components/Heading.astro';
+import SectionHeading from '../components/SectionHeading.astro';
 import Contact from '../components/Contact.astro';
 import Card from '../components/Card.astro';
 
@@ -15,12 +15,12 @@ const pageTitle = "ホームページ";
 
 </section>
 <section class="mb-40 max-w-screen-lg mx-auto w-11/12" id="works">
-	<Heading />
+	<SectionHeading title="Works" subTitle="お仕事実績"/>
 	<Card />
 
 </section>
 <section class="mb-40  max-w-screen-lg mx-auto max-h-dvh w-11/12" id="service">
-	<Heading />
+	<SectionHeading title="Service" subTitle="業務領域"/>
 	<span class="サービス"></span>
 		<div class="">
 			<div class="py-6">
@@ -57,7 +57,7 @@ const pageTitle = "ホームページ";
 </section>
 <section class=" text-white bg-black mb-40  max-h-dvh py-40" id="profile">
 	<div class="max-w-screen-lg mx-auto w-11/12">
-		<Heading />
+		<SectionHeading title="Profile" subTitle="経歴"/>
 		<div class=" leading-loose">
 			<p class="pb-2">4月11日生まれ / O型 /埼玉県出身/宮城県在住</p>
 			<p class="pb-2">Webデザインの専門学校を卒業後、地方暮らしに憧れを抱き、
@@ -79,7 +79,7 @@ const pageTitle = "ホームページ";
 
 </section>
 <section class="mb-40 md:max-w-screen-lg mx-auto w-11/12" id="contact">
-	<Heading />
+	<SectionHeading title="Contact" subTitle="お問い合わせ"/>
 	<Contact />
 </section>
 
