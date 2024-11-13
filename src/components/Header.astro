@@ -2,18 +2,20 @@
 ---
   <header class="bg-white mb-10 fixed top-0 left-0 right-0 shadow z-50">
     <div class="max-w-5xl container mx-auto px-4 py-4 flex justify-between items-center">
-      <!-- ロゴ -->
-      <div class="text-xl font-bold text-gray-800">
-        Yuya Akatsu
-      </div>
+      <a href="/">
+        <div class="text-xl font-bold text-gray-800">
+          Yuya Akatsu
+        </div>
+      </a>
+      { Astro.url.pathname === '/' ? (
 
-      <!-- ナビゲーション -->
-      <nav class="space-x-4 hidden md:block">
-        <a href="#works" class="capitalize  relative pb-1 line">works</a>
-        <a href="#service" class="capitalize relative pb-1 line">service</a>
-        <a href="#profile" class="capitalize relative pb-1 line">profile</a>
-        <a href="#contact" class="capitalize relative pb-1 line">contact</a>
-      </nav>
+        <nav class="space-x-4 hidden md:block">
+          <a href="#works" class="capitalize  relative pb-1 line">works</a>
+          <a href="#service" class="capitalize relative pb-1 line">service</a>
+          <a href="#profile" class="capitalize relative pb-1 line">profile</a>
+          <a href="#contact" class="capitalize relative pb-1 line">contact</a>
+        </nav>
+      ) : null }
 
     </div>
   </header>
