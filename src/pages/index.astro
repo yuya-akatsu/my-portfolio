@@ -50,11 +50,11 @@ const response = await getBlogs({ fields: ['id', 'title', 'thumbnail','content',
 			<div class="pb-8 leading-loose">
 				<div class="pb-2">デザインはFigmaを使用しています。</div>
 				<p class="pb-2">
-					ノーコードツールSTUDIOを活用して一気通貫した納品も可能ですので、
+					ノーコードツールStudioを活用して一気通貫した納品も可能ですので、
 					最小限のコミュニケーションコストで制作いたします。
 				</p>
 				<p class="pb-2">Wordpressテーマ開発などコーディングの経験がございます。
-				AstroでReactを使用したフロントエンド開発の勉強中です。
+				Astro、TypeScriptを使用したフロントエンド開発の勉強中です。
 				開発者が実装しやすいことを重視し、スケジュールを円滑に進めます。</p>
 				<p class="pb-2">
 					コミュニケーションツールはzoom、slackの使用が長いですが、
@@ -63,13 +63,11 @@ const response = await getBlogs({ fields: ['id', 'title', 'thumbnail','content',
 				<p class="pb-2">作って終わりではなく、定期的に効果検証を行って課題改善に尽くします。</p>
 			</div>
 		</div>
-		<div class="tag flex gap-4 flex-wrap justify-around">
-			<p class="capitalize bg-white px-4 py-1 md:px-8 md:py-2  rounded-full font-semibold">figma</p>
-			<p class="capitalize bg-white px-4 py-1 md:px-8 md:py-2 rounded-full font-semibold">studio</p>
-			<p class="capitalize bg-white px-4 py-1 md:px-8 md:py-2 rounded-full font-semibold">astro</p>
-			<p class=" bg-white px-4 py-1 md:px-8 md:py-2 rounded-full font-semibold">Tailwind.css</p>
-			<p class="capitalize bg-white px-4 py-1 md:px-8 md:py-2 rounded-full font-semibold">wordPress</p>
-		</div>
+		<ul class="tag flex flex-wrap justify-around">
+		  {Array.from(new Set(response.contents.flatMap(content => content.toolTag[0].tag))).map((tag, index) => (
+			<li key={index} class="bg-white px-4 py-1 md:px-8 md:py-2  rounded-full font-semibold">{tag}</li>
+		  ))}
+		</ul>
 
 
 </section>
