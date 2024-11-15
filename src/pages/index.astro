@@ -4,7 +4,7 @@ import SectionHeading from '../components/SectionHeading.astro';
 import Contact from '../components/Contact.astro';
 //microCMS呼び出し
 import { getBlogs } from "../library/microcms";
-const response = await getBlogs({ fields: ['id', 'title', 'thumbnail','tag','content'] });
+const response = await getBlogs({ fields: ['id', 'title', 'thumbnail','content','webSiteUrl','toolTag'] });
 ---
 
 <BaseLayout>
@@ -20,24 +20,24 @@ const response = await getBlogs({ fields: ['id', 'title', 'thumbnail','tag','con
 		{
 		  response.contents.map((content: any) => (
 			<li class="container bg-white rounded-lg hover:rounded-none">
-			  <a href={content.id} >
+			  <a href={content.webSiteUrl} target="_blank">
 				<div class="overflow-hidden">
 				<img src={content.thumbnail.url} alt={content.title} class="rounded-t-lg transition-transform duration-300 ease-in-out transform hover:scale-110" /></div>
 				<div class="p-5">
 				<h3 class="mb-2 text-2xl font-bold text-gray-900">{content.title}</h3>
-            	<div class="mb-3 text-gray-700 "set:html={content.content}>
-            </div>
-        </div>
-				<ul class="tag flex p-5 pt-0 gap-4 flex-wrap">
-            <li class=" bg-gray-200 px-6 py-1 rounded-full  text-gray-500 text-sm tracking-wider">{content.tag}</li>
-        </ul>
+            	<div class="mb-3 text-gray-700" set:html={content.content}>
+            	</div>
+        		</div>
+			<ul class="tag flex p-5 pt-0 gap-4 flex-wrap">
+			  {content.toolTag && content.toolTag[0].tag.map((tag) => (
+				<li class=" bg-gray-200 px-6 py-1 rounded-full  text-gray-500 text-sm tracking-wider">{tag}</li>
+			  ))}
+			</ul>
 			  </a>
 			</li>
 		  ))
 		}
 	  </ul>
-
-
 </section>
 <section class="max-w-screen-lg mx-auto w-11/12 py-20 md:py-40" id="service">
 	<SectionHeading title="Service" subTitle="業務領域"/>
