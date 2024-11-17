@@ -103,22 +103,5 @@ const response = await getBlogs({ fields: ['id', 'title', 'thumbnail','content',
 		scroll-behavior: smooth; /* スムーススクロールを有効にする */
 	}
 </style>
-<script>
-	// スクロール時にアニメーションを追加するためのJavaScript
-	document.querySelectorAll('nav a').forEach(anchor => {
-		anchor.addEventListener('click', function(e) {
-			e.preventDefault();
-
-			const targetId = this.getAttribute('href');
-			const targetElement = document.querySelector(targetId);
-
-			if (targetElement) {
-				// スムーススクロールを実行
-				targetElement.scrollIntoView({ behavior: 'smooth' });
-			}
-		});
-	});
-
-</script>
 
 </BaseLayout>

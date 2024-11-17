@@ -10,6 +10,7 @@ const { pageTitle } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Yuya Akatsu | Web Designer</title>
+
   </head>
   <body class="bg-gray-100 leading-relaxed">
     <Header />
@@ -17,6 +18,7 @@ const { pageTitle } = Astro.props;
     <slot />
   </main>
     <Footer />
+    <script src="script.ts" type="module"></script>
   </body>
 
 </html>
