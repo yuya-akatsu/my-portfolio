@@ -39,6 +39,22 @@ const response = await getBlogs({ fields: ['id', 'title', 'thumbnail','content',
 		}
 	  </ul>
 </section>
+<section class="max-w-screen-lg mx-auto w-11/12 py-20 md:py-40 mt-16" id="create">
+	<SectionHeading title="Create" subTitle="個人制作"/>
+	  <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
+			<li class="container bg-white rounded-lg hover:rounded-none">
+			  <a href="/trump-game" target="_blank">
+				<div class="overflow-hidden">
+				<img src="" alt="" class="rounded-t-lg transition-transform duration-300 ease-in-out transform hover:scale-110" /></div>
+				<div class="p-5">
+				<h3 class="mb-2 text-2xl font-bold text-gray-900">トランプゲーム</h3>
+            	<div class="mb-3 text-gray-700">
+            	</div>
+        		</div>
+			  </a>
+			</li>
+	  </ul>
+</section>
 <section class="max-w-screen-lg mx-auto w-11/12 py-20 md:py-40" id="service">
 	<SectionHeading title="Service" subTitle="業務領域"/>
 	<span class="サービス"></span>
@@ -100,7 +116,7 @@ const response = await getBlogs({ fields: ['id', 'title', 'thumbnail','content',
 </section>
 <style>
 	html {
-		scroll-behavior: smooth; /* スムーススクロールを有効にする */
+		scroll-behavior: smooth;
 	}
 </style>
 
