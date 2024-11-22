@@ -13,29 +13,42 @@ document.querySelectorAll('nav a').forEach((anchor: HTMLAnchorElement) => {
   });
 });
 import {gsap} from "gsap";
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
-	gsap.to("#mainVisualImage",{
-		repeat:-1,
-    rotate:360,
-		duration:2,
-    ease:'none',
-	})
+gsap.registerPlugin(ScrollTrigger);
+
+	// gsap.to("#mainVisualImage",{
+	// 	repeat:-1,
+  //   rotate:360,
+	// 	duration:2,
+  //   ease:'none',
+	// })
 // カードがスクロールに合わせて出現
-document.querySelectorAll(".listItem").forEach((el) => {
+document.querySelectorAll(".js-listItem").forEach((el) => {
   gsap.fromTo(
     el,
     { y: 50, opacity: 0 },
     {
       y: 0,
       opacity: 1,
-      duration: 1.5,
+      duration: 1.0,
       scrollTrigger: {
         trigger: el,
-        start: "top 90%",
+        start: "top 60%",
         ease: "expo",
       },
     }
   );
+});
+gsap.to(".circle", {
+  scale: 100,              // スケールアップ
+  opacity: 0,            // フェードアウト
+  duration: 1,           // アニメーション時間
+  ease: "power1.out",    // スムーズな動き
+  onComplete: () => {    // アニメーション終了後の処理
+    const loader = document.getElementById("loader");
+    loader.style.display = "none"; // ローディング画面を非表示に
+  }
 });
 // 	gsap.set(".listItem",{
 // 		y:20,

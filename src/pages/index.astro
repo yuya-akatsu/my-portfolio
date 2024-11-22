@@ -19,7 +19,7 @@ const response = await getBlogs({ fields: ['id', 'title', 'thumbnail','content',
 	  <ul class="grid grid-cols-1  gap-6">
 		{
 		  response.contents.map((content: any) => (
-			<li class="listItem container bg-white rounded-lg hover:rounded-none">
+			<li class="js-listItem container bg-white rounded-lg hover:rounded-none">
 			  <a href={content.webSiteUrl} target="_blank">
 				<div class="overflow-hidden">
 				<img src={content.thumbnail.url} alt={content.title} class="rounded-t-lg transition-transform duration-300 ease-in-out transform hover:scale-110" /></div>
