@@ -16,14 +16,6 @@ import {gsap} from "gsap";
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
-
-	// gsap.to("#mainVisualImage",{
-	// 	repeat:-1,
-  //   rotate:360,
-	// 	duration:2,
-  //   ease:'none',
-	// })
-// カードがスクロールに合わせて出現
 document.querySelectorAll(".js-listItem").forEach((el) => {
   gsap.fromTo(
     el,
@@ -43,24 +35,20 @@ document.querySelectorAll(".js-listItem").forEach((el) => {
 gsap.to(".circle", {
   scale: 100,              // スケールアップ
   opacity: 0,            // フェードアウト
-  duration: 1,           // アニメーション時間
-  ease: "power1.out",    // スムーズな動き
+  duration: 1.5,           // アニメーション時間
+  ease: "power2.in",    // スムーズな動き
   onComplete: () => {    // アニメーション終了後の処理
     const loader = document.getElementById("loader");
     loader.style.display = "none"; // ローディング画面を非表示に
+    const mainVisual = document.getElementById("mainVisual");
+    mainVisual.style.display = "block";
+
+    // メインビジュアルのふわっとアニメーション
+    gsap.to("#mainVisual", {
+      opacity: 1,          // 不透明に
+      y: 0,                // 元の位置に戻す
+      duration: 3.5,       // アニメーション時間
+      ease: "power2.out"   // なめらかな動き
+    });
   }
 });
-// 	gsap.set(".listItem",{
-// 		y:20,
-// 		opacity:0,
-// 	});
-// gsap.to('.listItem', 1.5, {
-//   y: 0,
-//   opacity: 1,
-//   ease: 'expo.out',
-//   stagger: {
-//     each: 0.8,
-
-//     from: 'start'
-//   }
-// });
