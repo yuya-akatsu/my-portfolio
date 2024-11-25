@@ -8,21 +8,21 @@ const response = await getBlogs({ fields: ['id', 'title', 'thumbnail','content',
 ---
 
 <BaseLayout>
-<section class="mt-24" id="mainVisual">
-	<div><img src="/mainVisualImage.jpg" alt="" class="w-1/4 m-auto rounded-full mb-6 filter saturate-0 transition-filter duration-300 ease-in-out hover:saturate-100 hover:scale-105"></div>
+<section class="mt-24 " >
+	<div><img  src="/mainVisualImage.jpg" alt="" class="mainVisualImage w-1/4 m-auto rounded-full mb-6 filter saturate-0 transition-filter duration-300 ease-in-out hover:saturate-100 hover:scale-105"></div>
 	<h1 class="text-4xl lg:text-5xl text-center mb-2 font-extrabold">赤津優弥</h1>
 	<p class="text-center">Web Designer</p>
 
 </section>
 <section class="max-w-screen-lg mx-auto w-11/12 py-20 md:py-40 mt-16" id="works">
-	<SectionHeading title="Works" subTitle="お仕事実績"/>
-	  <ul class="grid grid-cols-1  gap-6">
+	<SectionHeading title="works"/>
+	  <ul class="grid grid-cols-1  gap-12">
 		{
 		  response.contents.map((content: any) => (
-			<li class="js-listItem container bg-white rounded-lg hover:rounded-none">
+			<li class="js-listItem container bg-white rounded-lg">
 			  <a href={content.webSiteUrl} target="_blank">
 				<div class="overflow-hidden">
-				<img src={content.thumbnail.url} alt={content.title} class="rounded-t-lg transition-transform duration-300 ease-in-out transform hover:scale-110" /></div>
+				<img src={content.thumbnail.url} alt={content.title} class="transition-transform duration-300 ease-in-out transform hover:scale-110" /></div>
 				<div class="p-5">
 				<h3 class="mb-2 text-2xl font-bold text-gray-900">{content.title}</h3>
             	<div class="mb-3 text-gray-700" set:html={content.content}>
@@ -30,7 +30,7 @@ const response = await getBlogs({ fields: ['id', 'title', 'thumbnail','content',
         		</div>
 			<ul class="tag flex p-5 pt-0 gap-4 flex-wrap">
 			  {content.toolTag && content.toolTag[0].tag.map((tag) => (
-				<li class=" bg-gray-200 px-6 py-1 rounded-full  text-gray-500 text-sm tracking-wider">{tag}</li>
+				<li class=" bg-neutral-400 px-6 py-1 rounded-full  text-black text-sm tracking-wider">{tag}</li>
 			  ))}
 			</ul>
 			  </a>
@@ -39,58 +39,41 @@ const response = await getBlogs({ fields: ['id', 'title', 'thumbnail','content',
 		}
 	  </ul>
 </section>
-<!-- <section class="max-w-screen-lg mx-auto w-11/12 py-20 md:py-40 mt-16" id="create">
-	<SectionHeading title="Create" subTitle="個人制作"/>
-	  <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
-			<li class="container bg-white rounded-lg hover:rounded-none">
-			  <a href="/trump-game" target="_blank">
-				<div class="overflow-hidden">
-				<img src="public/trump-game/trump-game-ogp.png" alt="" class="rounded-t-lg transition-transform duration-300 ease-in-out transform hover:scale-110" /></div>
-				<div class="p-5">
-				<h3 class="mb-2 text-2xl font-bold text-gray-900">トランプゲーム</h3>
-            	<div class="mb-3 text-gray-700">
-            	</div>
-        		</div>
-			  </a>
-			</li>
-
-	  </ul>
-</section> -->
 <section class="max-w-screen-lg mx-auto w-11/12 py-20 md:py-40" id="service">
-	<SectionHeading title="Service" subTitle="業務領域"/>
+	<SectionHeading title="service"/>
 	<span class="サービス"></span>
 		<div class="">
 			<div class="py-6">
 				<h3 class="text-2xl font-bold pb-2">Webデザイン制作 / フロントエンド開発</h3>
-				<span class="text-gray-400 capitalize">web design / frontend Development</span>
+				<span class="text-neutral-400 capitalize">web design / frontend Development</span>
 			</div>
 			<div class="pb-8 leading-loose">
-				<div class="pb-2">デザインはFigmaを使用しています。</div>
-				<p class="pb-2">
+				<div class="pb-6">デザインはFigmaを使用しています。</div>
+				<p class="pb-6">
 					ノーコードツールStudioを活用して一気通貫した納品も可能ですので、
 					最小限のコミュニケーションコストで制作いたします。
 				</p>
-				<p class="pb-2">Wordpressテーマ開発などコーディングの経験がございます。
+				<p class="pb-6">Wordpressテーマ開発などコーディングの経験がございます。
 				Astro、TypeScriptを使用したフロントエンド開発の勉強中です。
 				開発者が実装しやすいことを重視し、スケジュールを円滑に進めます。</p>
-				<p class="pb-2">
+				<p class="pb-6">
 					コミュニケーションツールはzoom、slackの使用が長いですが、
 					ご要望に応じて柔軟に対応可能です。
 				</p>
-				<p class="pb-2">作って終わりではなく、定期的に効果検証を行って課題改善に尽くします。</p>
+				<p class="pb-6">作って終わりではなく、定期的に効果検証を行って課題改善に尽くします。</p>
 			</div>
 		</div>
 		<ul class="tag flex flex-wrap justify-around">
 		  {Array.from(new Set(response.contents.flatMap(content => content.toolTag[0].tag))).map((tag, index) => (
-			<li key={index} class="bg-white px-4 py-1 md:px-8 md:py-2  rounded-full font-semibold">{tag}</li>
+			<li key={index} class="bg-neutral-400 px-4 py-1 md:px-8 md:py-2  rounded-full tracking-wider">{tag}</li>
 		  ))}
 		</ul>
 
 
 </section>
-<section class=" text-white bg-black py-20 md:py-40" id="profile">
+<section class=" text-white bg-zinc-950 py-20 md:py-40" id="profile">
 	<div class="max-w-screen-lg mx-auto w-11/12">
-		<SectionHeading title="Profile" subTitle="経歴"/>
+		<SectionHeading title="profile"/>
 		<div class=" leading-loose">
 			<p class="pb-6">4月11日生まれ / O型 /埼玉県出身/宮城県在住</p>
 			<p class="pb-6">Webデザインの専門学校を卒業後、地方暮らしに憧れを抱き、
@@ -112,7 +95,7 @@ const response = await getBlogs({ fields: ['id', 'title', 'thumbnail','content',
 
 </section>
 <section class="md:max-w-screen-lg mx-auto w-11/12  py-20 md:py-40" id="contact">
-	<SectionHeading title="Contact" subTitle="お問い合わせ"/>
+	<SectionHeading title="contact"/>
 	<Contact />
 </section>
 </BaseLayout>

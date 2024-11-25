@@ -12,9 +12,13 @@ const { pageTitle } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Yuya Akatsu | Web Designer</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+      </style>
+      <link rel="stylesheet" href="src/styles/GlobalStyles.css">
 
   </head>
-  <body class="bg-gray-100 leading-relaxed">
+  <body class="bg-gray-50 leading-relaxed">
     <Header />
     <div id="loader">
       <div class="circle"></div>
@@ -26,32 +30,7 @@ const { pageTitle } = Astro.props;
     <slot />
   </main>
     <Footer />
-<style>
-      #loader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: rgb(243 244 246);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-      }
-      .circle {
-        width: 50px;
-        height: 50px;
-        background: #fff;
-        border-radius: 50%;
-      }
-      #mainVisual {
-    text-align: center;
-    padding: 50px 20px;
-    opacity: 0; /* 初期状態は透明 */
-    transform: translateY(20px); /* 初期状態は少し下に移動 */
-  }
-    </style>
+
     <script>
     import '../scripts/script.js';
     import '../scripts/smoothScroll.ts';
