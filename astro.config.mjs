@@ -9,7 +9,14 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   outDir: 'dist',
-  output: "server",
+  output: {
+    dir: 'dist',
+    format: 'esm',
+  },
   adapter: netlify(),
   integrations: [tailwind(), react()],
+  build: {
+    srcDir: 'src',
+    entryPoints: ['script.ts'],
+  },
 });
