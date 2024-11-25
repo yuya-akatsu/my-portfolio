@@ -13,8 +13,8 @@ export default defineConfig({
   adapter: netlify(),
   integrations: [tailwind(), react()],
   build: {
-    srcDir: 'src',
-    entryPoints: ['script.ts'],
-    assets: 'assets/js',
+    // srcDir: 'src',
+    // entryPoints: ['script.ts'],
+    // assets: 'src/scripts',
   },
 });
