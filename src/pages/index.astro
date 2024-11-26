@@ -95,37 +95,6 @@ const response = await getBlogs({ fields: ['id', 'title', 'thumbnail','content',
 		}
 	  </ul>
 </section>
-<section class="max-w-screen-lg mx-auto w-11/12 py-20 md:py-40" id="service">
-	<SectionHeading title="service"/>
-	<span class="サービス"></span>
-		<div class="">
-			<div class="py-6">
-				<h3 class="text-2xl font-bold pb-2 capitalize lexend text-gray-500">web design / Jamstack</h3>
-			</div>
-			<div class="pb-8 leading-loose">
-				<div class="pb-6">デザインはFigmaを使用しています。</div>
-				<p class="pb-6">
-					ノーコードツールStudioを活用して一気通貫した納品も可能ですので、
-					最小限のコミュニケーションコストで制作いたします。
-				</p>
-				<p class="pb-6">Wordpressテーマ開発などコーディングの経験がございます。
-				Astro、TypeScriptを使用したフロントエンド開発の勉強中です。
-				開発者が実装しやすいことを重視し、スケジュールを円滑に進めます。</p>
-				<p class="pb-6">
-					コミュニケーションツールはzoom、slackの使用が長いですが、
-					ご要望に応じて柔軟に対応可能です。
-				</p>
-				<p class="pb-6">作って終わりではなく、定期的に効果検証を行って課題改善に尽くします。</p>
-			</div>
-		</div>
-		<ul class="tag flex flex-wrap justify-around">
-		  {Array.from(new Set(response.contents.flatMap(content => content.toolTag[0].tag))).map((tag, index) => (
-			<li key={index} class="bg-gray-300 px-4 py-1 md:px-8 md:py-2  rounded-full tracking-wider lexend">{tag}</li>
-		  ))}
-		</ul>
-
-
-</section>
 <section class=" text-white bg-gray-400 py-20 md:py-40" id="profile">
 	<div class="max-w-screen-lg mx-auto w-11/12">
 		<SectionHeading title="profile"/>
