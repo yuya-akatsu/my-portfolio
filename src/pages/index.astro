@@ -3,6 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import Contact from '../components/Contact.astro';
 import { getBlogs, getBlogDetail } from "../library/microcms";
+import { Image } from 'astro:assets';
+import mainVisualImage from '../assets/mainVisualImage.jpg';
 
 const response = await getBlogs({ fields: ['id', 'title', 'thumbnail','content','webSiteUrl','toolTag'] });
 ---
@@ -10,7 +12,8 @@ const response = await getBlogs({ fields: ['id', 'title', 'thumbnail','content',
 <BaseLayout>
 <section class="mt-40" >
 	<div class="mainVisualImage">
-		<img  src="/mainVisualImage.jpg" alt="" class="w-1/6 m-auto rounded-full mb-6"></div>
+		<Image src={mainVisualImage} alt="赤津優弥です" class="w-1/6 m-auto rounded-full mb-6" />
+	</div>
 	<div class="capitalize lexend">
 		<h1 class="text-4xl lg:text-5xl text-center mb-2 font-bold">yuya akatsu</h1>
 		<p class="text-center">web designer</p>
@@ -75,7 +78,7 @@ const response = await getBlogs({ fields: ['id', 'title', 'thumbnail','content',
 			<li class="js-listItem container bg-white rounded-lg">
 			  <a href={content.webSiteUrl} target="_blank">
 				<div class="overflow-hidden">
-				<img src={content.thumbnail.url} alt={content.title} class="transition-transform duration-300 ease-in-out transform hover:scale-110" /></div>
+				<img src={content.thumbnail.url.includes('?') ? content.thumbnail.url + '&fm=webp' : content.thumbnail.url + '?fm=webp'} alt={content.title} class="transition-transform duration-300 ease-in-out transform hover:scale-110 w-full"/></div>
 				<div class="p-5">
 				<h3 class="mb-2 text-2xl font-bold text-gray-900">{content.title}</h3>
             	<div class="mb-3 text-gray-700" set:html={content.content}>
