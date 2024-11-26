@@ -1,7 +1,6 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-const { pageTitle } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, 'https://yuya-akatsu.netlify.app/');
 const ogpImageURL = new URL('/ogp.png', canonicalURL);
 
@@ -16,11 +15,11 @@ const ogpImageURL = new URL('/ogp.png', canonicalURL);
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content="フリーランスWeb Designer、赤津優弥のポートフォリオサイトです。" />
     <meta property="og:image" content={ogpImageURL} />
-    <meta property="og:title" content={pageTitle}>
+    <meta property="og:title" content="Yuya Akatsu | Web Designer">
     <meta property="og:description" content="フリーランスWeb Designer、赤津優弥のポートフォリオサイトです。">
     <meta property="og:url" content="https://yuya-akatsu.netlify.app/" />
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content={pageTitle} />
+    <meta property="og:site_name" content="Yuya Akatsu | Web Designer" />
     <meta property="og:locale" content="ja_JP" />
 
   </head>

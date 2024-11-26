@@ -38,6 +38,13 @@ const response = await getBlogs({ fields: ['id', 'title', 'thumbnail','content',
     top: 0;
     width: 20px;
 }
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+.lexend {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
 
 @keyframes scroll {
     0% {
@@ -77,7 +84,7 @@ const response = await getBlogs({ fields: ['id', 'title', 'thumbnail','content',
         		</div>
 			<ul class="tag flex p-5 pt-0 gap-4 flex-wrap">
 			  {content.toolTag && content.toolTag[0].tag.map((tag) => (
-				<li class=" bg-gray-100 px-6 py-1 rounded-full  text-black text-sm tracking-wider">{tag}</li>
+				<li class=" bg-gray-100 px-6 py-1 rounded-full  text-black text-sm tracking-wider lexend">{tag}</li>
 			  ))}
 			</ul>
 			  </a>
@@ -91,8 +98,7 @@ const response = await getBlogs({ fields: ['id', 'title', 'thumbnail','content',
 	<span class="サービス"></span>
 		<div class="">
 			<div class="py-6">
-				<h3 class="text-2xl font-bold pb-2">Webデザイン制作 / フロントエンド開発</h3>
-				<span class="text-gray-400 capitalize">web design / frontend Development</span>
+				<h3 class="text-2xl font-bold pb-2 capitalize lexend text-gray-500">web design / Jamstack</h3>
 			</div>
 			<div class="pb-8 leading-loose">
 				<div class="pb-6">デザインはFigmaを使用しています。</div>
@@ -112,7 +118,7 @@ const response = await getBlogs({ fields: ['id', 'title', 'thumbnail','content',
 		</div>
 		<ul class="tag flex flex-wrap justify-around">
 		  {Array.from(new Set(response.contents.flatMap(content => content.toolTag[0].tag))).map((tag, index) => (
-			<li key={index} class="bg-gray-300 px-4 py-1 md:px-8 md:py-2  rounded-full tracking-wider">{tag}</li>
+			<li key={index} class="bg-gray-300 px-4 py-1 md:px-8 md:py-2  rounded-full tracking-wider lexend">{tag}</li>
 		  ))}
 		</ul>
 
