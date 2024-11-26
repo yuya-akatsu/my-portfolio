@@ -11,13 +11,21 @@ const ogpImageURL = new URL('/ogp.png', canonicalURL);
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/jpg" href="/mainVisualImage.jpg" />
+    <title>Yuya Akatsu | Web Designer</title>
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Yuya Akatsu | Web Designer</title>
+    <meta name="description" content="フリーランスWeb Designer、赤津優弥のポートフォリオサイトです。" />
+    <meta property="og:image" content={ogpImageURL} />
+    <meta property="og:title" content={pageTitle}>
+    <meta property="og:description" content="フリーランスWeb Designer、赤津優弥のポートフォリオサイトです。">
+    <meta property="og:url" content="https://yuya-akatsu.netlify.app/" />
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content={pageTitle} />
+    <meta property="og:locale" content="ja_JP" />
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
-      </style>
-      <link rel="stylesheet" href="src/styles/GlobalStyles.css">
+      @import url('src/styles/GlobalStyles.css');
+    </style>
 
   </head>
   <body class="bg-gray-100 leading-relaxed">
