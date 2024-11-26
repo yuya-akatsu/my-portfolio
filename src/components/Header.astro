@@ -1,10 +1,10 @@
 ---
 
 ---
-  <header class="bg-neutral-500 mb-10 fixed top-0 left-0 right-0 shadow z-50 lexend  text-white">
+  <header class="border-b-4 mb-10 fixed top-0 left-0 right-0 z-50 lexend bg-white border-gray-200 leading-loose">
     <div class="max-w-5xl container mx-auto px-4 py-8 flex justify-between items-center">
       <a href="/">
-        <div class="text-xl font-bold  lexend">
+        <div class="text-xl font-bold">
           Yuya Akatsu
         </div>
       </a>
@@ -20,22 +20,3 @@
 
     </div>
   </header>
-  <style>
-    /* Tailwindではサポートされていない擬似要素のスタイル */
-    .line::before {
-      content: '';
-      background: #000;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 2px;
-      transform: scale(0, 1);
-      transform-origin: right top;
-      transition: transform 0.3s;
-    }
-    .line:hover::before {
-      transform-origin: left top;
-      transform: scale(1, 1);
-    }
-  </style>

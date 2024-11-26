@@ -4,15 +4,11 @@ interface Props {
   title: string;
 }
 const { title } = Astro.props;
-const { subTitle } = Astro.props;
 ---
 
-<div class="border-b-4  pb-4 mb-8 border-primary-600">
+<div class="border-b-4  pb-4 mb-8 ">
 
-    <h2 class="lexend text-4xl capitalize tracking-wide mb-2 text-primary-600">
+    <h2 class="lexend text-4xl capitalize tracking-wide mb-2">
         {title}
     </h2>
-    <p class="">
-        {subTitle}
-    </p>
 </div>
