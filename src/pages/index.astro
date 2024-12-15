@@ -76,7 +76,7 @@ const response = await getBlogs({ fields: ['id', 'title', 'thumbnail','content',
 		{
 		  response.contents.map((content: any) => (
 			<li class="js-listItem container bg-white rounded-lg">
-			  <a href={content.webSiteUrl} target="_blank">
+			  <a href={content.id} target="_blank">
 				<div class="overflow-hidden">
 				<img src={content.thumbnail.url.includes('?') ? content.thumbnail.url + '&fm=webp' : content.thumbnail.url + '?fm=webp'} alt={content.title} class="transition-transform duration-300 ease-in-out transform hover:scale-110 w-full"/></div>
 				<div class="p-5">
